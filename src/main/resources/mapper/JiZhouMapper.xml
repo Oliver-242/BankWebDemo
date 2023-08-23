@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cai.ji.zhou.springboot_demo.mapper.JiZhouMapper">
+    
+    <resultMap id="BaseResultMap" type="cai.ji.zhou.springboot_demo.entity.InfoEntity">
+        <id column="userid" property="userId" jdbcType="BIGINT" />
+        <result column="money" property="money" jdbcType="BIGINT" />
+        <result column="cardid" property="cardId" jdbcType="CHAR" />
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    </resultMap>
+    
+    <sql id="Base_Column_List">
+        userid, money, cardid, create_time, update_time
+    </sql>
+
+<!--    <select id="selectAll" resultType="cai.ji.zhou.springboot_demo.entity.InfoEntity">-->
+<!--        select-->
+<!--        <include refid="Base_Column_List" />-->
+<!--        from depositcards-->
+<!--    </select>-->
+
+    <select id="selectAll1" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from depositcards
+--         limit 1
+    </select>
+    
+</mapper>

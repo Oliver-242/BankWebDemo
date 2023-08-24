@@ -9,6 +9,6 @@ import java.util.List;
 
 @Mapper
 @Repository
-public interface JiZhouMapper {
-    List<InfoEntity> selectAll1();
+public interface QueryMapper {
+    List<InfoEntity> selectAll();
 }
